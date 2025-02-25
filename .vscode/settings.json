@@ -29,6 +29,7 @@
     "src\\app\\app.component.spec.ts": true,
     "src\\app\\home\\home.page.spec.ts": true,
     "src\\app\\components\\pdf-item\\pdf-item.component.spec.ts": true,
-    "src\\app\\components\\header\\header.component.spec.ts": true
+    "src\\app\\components\\header\\header.component.spec.ts": true,
+    "src\\app\\pdf-viewer\\pdf-viewer.page.spec.ts": true
   }
 }
