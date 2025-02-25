@@ -1,3 +1,34 @@
 {
-  "typescript.preferences.autoImportFileExcludePatterns": ["@ionic/angular/common", "@ionic/angular/standalone"]
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "@ionic/angular/common",
+    "@ionic/angular/standalone"
+  ],
+  "files.exclude": {
+    "node_modules": true,
+    ".vscode": true,
+    ".angular": true,
+    ".browserslistrc": true,
+    ".editorconfig": true,
+    ".eslintrc.json": true,
+    ".gitignore": true,
+    "angular.json": true,
+    "capacitor.config.ts": true,
+    "ionic.config.json": true,
+    "package-lock.json": true,
+    "karma.conf.js": true,
+    "package.json": true,
+    "tsconfig.app.json": true,
+    "tsconfig.json": true,
+    "tsconfig.spec.json": true,
+    "src\\index.html": true,
+    "src\\main.ts": true,
+    "src\\polyfills.ts": true,
+    "src\\test.ts": true,
+    "src\\zone-flags.ts": true,
+    "src\\environments": true,
+    "src\\app\\app.component.spec.ts": true,
+    "src\\app\\home\\home.page.spec.ts": true,
+    "src\\app\\components\\pdf-item\\pdf-item.component.spec.ts": true,
+    "src\\app\\components\\header\\header.component.spec.ts": true
+  }
 }
