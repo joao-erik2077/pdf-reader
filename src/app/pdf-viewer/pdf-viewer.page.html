@@ -1,13 +1,25 @@
 <app-header [backButton]="true">{{ file?.name }}</app-header>
 
 <ion-content [fullscreen]="true" class="background">
-  <div class="pdf-toolbar">test</div>
+  <div class="pdf-toolbar">
+    <div class="page-navigation">
+      <ion-select
+        interface="popover"
+        [selectedText]="currentPage + ' / ' + file?.totalPages"
+        (ionChange)="changePage($event.target.value)"
+      >
+        @for (page of totalPages; track $index) {
+        <ion-select-option [value]="page">{{ page }}</ion-select-option>
+        }
+      </ion-select>
+    </div>
+  </div>
 
   <pdf-viewer
     class="pdf-viewer"
     [src]="file?.path"
     [original-size]="true"
     [fit-to-page]="true"
-    [zoom]=".9"
+    [page]="currentPage"
   ></pdf-viewer>
 </ion-content>
