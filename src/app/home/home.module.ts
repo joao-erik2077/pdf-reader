@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { HeaderComponent } from '../components/header/header.component';
+import { PdfItemComponent } from '../components/pdf-item/pdf-item.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HeaderComponent } from '../components/header/header.component';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    HeaderComponent
+    HeaderComponent,
+    PdfItemComponent
   ],
   declarations: [HomePage]
 })

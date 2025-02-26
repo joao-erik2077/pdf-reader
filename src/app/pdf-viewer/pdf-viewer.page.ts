@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PdfViewerService } from '../services/pdf/pdf-viewer.service';
+import { Pdf } from '../utils/Pdf';
 
 @Component({
   selector: 'app-pdf-viewer',
@@ -7,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class PdfViewerPage implements OnInit {
+  public file: Pdf | undefined;
 
-  constructor() { }
+  constructor(private pdfViewerService: PdfViewerService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.file = await this.pdfViewerService.getCurrentPdf();
   }
 
 }
