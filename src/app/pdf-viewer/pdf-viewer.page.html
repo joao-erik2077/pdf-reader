@@ -1,7 +1,9 @@
 <app-header [backButton]="true">{{ file?.name }}</app-header>
 
-<ion-content [fullscreen]="true" class="background">
+<ion-content [fullscreen]="false" class="background">
   <div class="pdf-toolbar">
+    <div></div>
+    <div></div>
     <div class="page-navigation">
       <ion-select
         interface="popover"
@@ -14,13 +16,16 @@
       </ion-select>
     </div>
   </div>
-
-  <pdf-viewer
-    class="pdf-viewer"
-    [src]="file?.path"
-    [original-size]="true"
-    [fit-to-page]="true"
-    [show-all]="true"
-    [(page)]="currentPage"
-  ></pdf-viewer>
+  <pinch-zoom [double-tap]="false" backgroundColor="transparent">
+    <pdf-viewer
+      class="pdf-viewer"
+      [src]="file?.path"
+      [original-size]="true"
+      [fit-to-page]="true"
+      [show-all]="true"
+      [render-text]="true"
+      [render-text-mode]="2"
+      [(page)]="currentPage"
+    ></pdf-viewer>
+  </pinch-zoom>
 </ion-content>
