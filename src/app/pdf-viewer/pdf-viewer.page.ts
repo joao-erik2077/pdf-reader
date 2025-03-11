@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PdfViewerService } from '../services/pdf/pdf-viewer.service';
 import { Pdf } from '../utils/Pdf';
+import { PdfViewerComponent } from 'ng2-pdf-viewer';
 
 @Component({
   selector: 'app-pdf-viewer',
@@ -13,6 +14,9 @@ export class PdfViewerPage implements OnInit {
   public currentPage: number = 1;
   public totalPages: number[] = [1];
 
+  @ViewChild(PdfViewerComponent)
+  private pdfComponent!: PdfViewerComponent;
+
   constructor(private pdfViewerService: PdfViewerService) { }
 
   async ngOnInit() {
@@ -24,5 +28,13 @@ export class PdfViewerPage implements OnInit {
 
   public changePage(value: number) {
     this.currentPage = value;
+  }
+
+  public async search(value: any) {
+    const matches = await this.pdfComponent.eventBus.dispatch('find', {
+      query: value, caseSensitive: false, findPrevious: true, highlightAll: true, phraseSearch: false, index: 2
+    });
+
+    console.log(matches)
   }
 }

@@ -2,7 +2,12 @@
 
 <ion-content [fullscreen]="false" class="background">
   <div class="pdf-toolbar">
-    <div></div>
+    <div class="text-search">
+      <ion-input
+        placeholder="Pesquisar..."
+        (ionInput)="search($event.target.value)"
+      ></ion-input>
+    </div>
     <div></div>
     <div class="page-navigation">
       <ion-select
